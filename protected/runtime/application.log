@@ -3082,3 +3082,326 @@ REQUEST_URI=/photo/
 in C:\sites\photo\protected\views\layouts\main.php (60)
 in C:\sites\photo\protected\views\layouts\column1.php (5)
 in C:\sites\photo\protected\controllers\SiteController.php (32)
+2012/10/22 14:05:10 [error] [php] Undefined variable: widht (C:\sites\Photo\protected\views\layouts\main.php:39)
+Stack trace:
+#0 C:\sites\yii\framework\web\widgets\CContentDecorator.php(77): SiteController->renderFile()
+#1 C:\sites\yii\framework\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate()
+#2 C:\sites\yii\framework\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput()
+#3 C:\sites\yii\framework\web\CBaseController.php(207): CContentDecorator->run()
+#4 C:\sites\yii\framework\web\CBaseController.php(301): SiteController->endWidget()
+#5 C:\sites\Photo\protected\views\layouts\column1.php(5): SiteController->endContent()
+#6 C:\sites\yii\framework\web\CBaseController.php(127): require()
+#7 C:\sites\yii\framework\web\CBaseController.php(96): SiteController->renderInternal()
+#8 C:\sites\yii\framework\web\CController.php(785): SiteController->renderFile()
+#9 C:\sites\Photo\protected\controllers\SiteController.php(32): SiteController->render()
+#10 C:\sites\yii\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#11 C:\sites\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#12 C:\sites\yii\framework\web\CController.php(287): SiteController->runAction()
+#13 C:\sites\yii\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#14 C:\sites\yii\framework\web\CWebApplication.php(276): SiteController->run()
+#15 C:\sites\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#16 C:\sites\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#17 C:\sites\Photo\index.php(13): CWebApplication->run()
+REQUEST_URI=/Photo/
+in C:\sites\Photo\protected\views\layouts\main.php (39)
+in C:\sites\Photo\protected\views\layouts\column1.php (5)
+in C:\sites\Photo\protected\controllers\SiteController.php (32)
+2012/10/22 14:10:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested view "index" was not found.' in C:\sites\yii\framework\web\actions\CViewAction.php:113
+Stack trace:
+#0 C:\sites\yii\framework\web\actions\CViewAction.php(124): CViewAction->resolveView('index')
+#1 C:\sites\yii\framework\web\actions\CAction.php(75): CViewAction->run()
+#2 C:\sites\yii\framework\web\CController.php(309): CAction->runWithParams(Array)
+#3 C:\sites\yii\framework\web\CController.php(287): CController->runAction(Object(CViewAction))
+#4 C:\sites\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 C:\sites\yii\framework\web\CWebApplication.php(276): CController->run('page')
+#6 C:\sites\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/page')
+#7 C:\sites\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\sites\Photo\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/Photo/index.php?r=site/page
+HTTP_REFERER=http://localhost/Photo/index.php?r=site/index
+---
+2012/10/22 14:10:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested view "index" was not found.' in C:\sites\yii\framework\web\actions\CViewAction.php:113
+Stack trace:
+#0 C:\sites\yii\framework\web\actions\CViewAction.php(124): CViewAction->resolveView('index')
+#1 C:\sites\yii\framework\web\actions\CAction.php(75): CViewAction->run()
+#2 C:\sites\yii\framework\web\CController.php(309): CAction->runWithParams(Array)
+#3 C:\sites\yii\framework\web\CController.php(287): CController->runAction(Object(CViewAction))
+#4 C:\sites\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 C:\sites\yii\framework\web\CWebApplication.php(276): CController->run('page')
+#6 C:\sites\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/page')
+#7 C:\sites\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\sites\Photo\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/Photo/index.php?r=site/page
+HTTP_REFERER=http://localhost/Photo/index.php?r=site/contact
+---
+2012/10/22 14:10:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested view "index" was not found.' in C:\sites\yii\framework\web\actions\CViewAction.php:113
+Stack trace:
+#0 C:\sites\yii\framework\web\actions\CViewAction.php(124): CViewAction->resolveView('index')
+#1 C:\sites\yii\framework\web\actions\CAction.php(75): CViewAction->run()
+#2 C:\sites\yii\framework\web\CController.php(309): CAction->runWithParams(Array)
+#3 C:\sites\yii\framework\web\CController.php(287): CController->runAction(Object(CViewAction))
+#4 C:\sites\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 C:\sites\yii\framework\web\CWebApplication.php(276): CController->run('page')
+#6 C:\sites\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/page')
+#7 C:\sites\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\sites\Photo\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/Photo/index.php?r=site/page
+HTTP_REFERER=http://localhost/Photo/index.php?r=site/contact
+---
+2012/10/22 14:10:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested view "index" was not found.' in C:\sites\yii\framework\web\actions\CViewAction.php:113
+Stack trace:
+#0 C:\sites\yii\framework\web\actions\CViewAction.php(124): CViewAction->resolveView('index')
+#1 C:\sites\yii\framework\web\actions\CAction.php(75): CViewAction->run()
+#2 C:\sites\yii\framework\web\CController.php(309): CAction->runWithParams(Array)
+#3 C:\sites\yii\framework\web\CController.php(287): CController->runAction(Object(CViewAction))
+#4 C:\sites\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 C:\sites\yii\framework\web\CWebApplication.php(276): CController->run('page')
+#6 C:\sites\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/page')
+#7 C:\sites\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\sites\Photo\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/Photo/index.php?r=site/page
+HTTP_REFERER=http://localhost/Photo/index.php?r=site/index
+---
+2012/10/22 14:36:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested view "index" was not found.' in C:\sites\yii\framework\web\actions\CViewAction.php:113
+Stack trace:
+#0 C:\sites\yii\framework\web\actions\CViewAction.php(124): CViewAction->resolveView('index')
+#1 C:\sites\yii\framework\web\actions\CAction.php(75): CViewAction->run()
+#2 C:\sites\yii\framework\web\CController.php(309): CAction->runWithParams(Array)
+#3 C:\sites\yii\framework\web\CController.php(287): CController->runAction(Object(CViewAction))
+#4 C:\sites\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 C:\sites\yii\framework\web\CWebApplication.php(276): CController->run('page')
+#6 C:\sites\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/page')
+#7 C:\sites\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\sites\Photo\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/Photo/index.php?r=site/page
+HTTP_REFERER=http://localhost/Photo/index.php?r=site/contact
+---
+2012/10/22 14:38:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested view "index" was not found.' in C:\sites\yii\framework\web\actions\CViewAction.php:113
+Stack trace:
+#0 C:\sites\yii\framework\web\actions\CViewAction.php(124): CViewAction->resolveView('index')
+#1 C:\sites\yii\framework\web\actions\CAction.php(75): CViewAction->run()
+#2 C:\sites\yii\framework\web\CController.php(309): CAction->runWithParams(Array)
+#3 C:\sites\yii\framework\web\CController.php(287): CController->runAction(Object(CViewAction))
+#4 C:\sites\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 C:\sites\yii\framework\web\CWebApplication.php(276): CController->run('page')
+#6 C:\sites\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/page')
+#7 C:\sites\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\sites\Photo\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/Photo/index.php?r=site/page
+HTTP_REFERER=http://localhost/Photo/index.php?r=site/contact
+---
+2012/10/22 14:52:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested view "index" was not found.' in C:\sites\yii\framework\web\actions\CViewAction.php:113
+Stack trace:
+#0 C:\sites\yii\framework\web\actions\CViewAction.php(124): CViewAction->resolveView('index')
+#1 C:\sites\yii\framework\web\actions\CAction.php(75): CViewAction->run()
+#2 C:\sites\yii\framework\web\CController.php(309): CAction->runWithParams(Array)
+#3 C:\sites\yii\framework\web\CController.php(287): CController->runAction(Object(CViewAction))
+#4 C:\sites\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 C:\sites\yii\framework\web\CWebApplication.php(276): CController->run('page')
+#6 C:\sites\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/page')
+#7 C:\sites\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\sites\Photo\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/Photo/index.php?r=site/page
+HTTP_REFERER=http://localhost/Photo/index.php?r=site/contact
+---
+2012/10/22 14:53:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested view "index" was not found.' in C:\sites\yii\framework\web\actions\CViewAction.php:113
+Stack trace:
+#0 C:\sites\yii\framework\web\actions\CViewAction.php(124): CViewAction->resolveView('index')
+#1 C:\sites\yii\framework\web\actions\CAction.php(75): CViewAction->run()
+#2 C:\sites\yii\framework\web\CController.php(309): CAction->runWithParams(Array)
+#3 C:\sites\yii\framework\web\CController.php(287): CController->runAction(Object(CViewAction))
+#4 C:\sites\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 C:\sites\yii\framework\web\CWebApplication.php(276): CController->run('page')
+#6 C:\sites\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/page')
+#7 C:\sites\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\sites\Photo\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/Photo/index.php?r=site/page
+HTTP_REFERER=http://localhost/Photo/index.php?r=site/page
+---
+2012/10/22 14:56:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested view "index" was not found.' in C:\sites\yii\framework\web\actions\CViewAction.php:113
+Stack trace:
+#0 C:\sites\yii\framework\web\actions\CViewAction.php(124): CViewAction->resolveView('index')
+#1 C:\sites\yii\framework\web\actions\CAction.php(75): CViewAction->run()
+#2 C:\sites\yii\framework\web\CController.php(309): CAction->runWithParams(Array)
+#3 C:\sites\yii\framework\web\CController.php(287): CController->runAction(Object(CViewAction))
+#4 C:\sites\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 C:\sites\yii\framework\web\CWebApplication.php(276): CController->run('page')
+#6 C:\sites\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/page')
+#7 C:\sites\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\sites\Photo\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/Photo/index.php?r=site/page
+HTTP_REFERER=http://localhost/Photo/index.php?r=site/index
+---
+2012/10/22 14:56:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested view "index" was not found.' in C:\sites\yii\framework\web\actions\CViewAction.php:113
+Stack trace:
+#0 C:\sites\yii\framework\web\actions\CViewAction.php(124): CViewAction->resolveView('index')
+#1 C:\sites\yii\framework\web\actions\CAction.php(75): CViewAction->run()
+#2 C:\sites\yii\framework\web\CController.php(309): CAction->runWithParams(Array)
+#3 C:\sites\yii\framework\web\CController.php(287): CController->runAction(Object(CViewAction))
+#4 C:\sites\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 C:\sites\yii\framework\web\CWebApplication.php(276): CController->run('page')
+#6 C:\sites\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/page')
+#7 C:\sites\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\sites\Photo\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/Photo/index.php?r=site/page
+HTTP_REFERER=http://localhost/Photo/index.php?r=site/login
+---
+2012/10/22 14:56:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested view "index" was not found.' in C:\sites\yii\framework\web\actions\CViewAction.php:113
+Stack trace:
+#0 C:\sites\yii\framework\web\actions\CViewAction.php(124): CViewAction->resolveView('index')
+#1 C:\sites\yii\framework\web\actions\CAction.php(75): CViewAction->run()
+#2 C:\sites\yii\framework\web\CController.php(309): CAction->runWithParams(Array)
+#3 C:\sites\yii\framework\web\CController.php(287): CController->runAction(Object(CViewAction))
+#4 C:\sites\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 C:\sites\yii\framework\web\CWebApplication.php(276): CController->run('page')
+#6 C:\sites\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/page')
+#7 C:\sites\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\sites\Photo\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/Photo/index.php?r=site/page
+HTTP_REFERER=http://localhost/Photo/index.php?r=site/index
+---
+2012/10/22 14:57:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested view "index" was not found.' in C:\sites\yii\framework\web\actions\CViewAction.php:113
+Stack trace:
+#0 C:\sites\yii\framework\web\actions\CViewAction.php(124): CViewAction->resolveView('index')
+#1 C:\sites\yii\framework\web\actions\CAction.php(75): CViewAction->run()
+#2 C:\sites\yii\framework\web\CController.php(309): CAction->runWithParams(Array)
+#3 C:\sites\yii\framework\web\CController.php(287): CController->runAction(Object(CViewAction))
+#4 C:\sites\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 C:\sites\yii\framework\web\CWebApplication.php(276): CController->run('page')
+#6 C:\sites\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/page')
+#7 C:\sites\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\sites\Photo\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/Photo/index.php?r=site/page
+HTTP_REFERER=http://localhost/Photo/index.php?r=site/index
+---
+2012/10/22 14:57:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested view "index" was not found.' in C:\sites\yii\framework\web\actions\CViewAction.php:113
+Stack trace:
+#0 C:\sites\yii\framework\web\actions\CViewAction.php(124): CViewAction->resolveView('index')
+#1 C:\sites\yii\framework\web\actions\CAction.php(75): CViewAction->run()
+#2 C:\sites\yii\framework\web\CController.php(309): CAction->runWithParams(Array)
+#3 C:\sites\yii\framework\web\CController.php(287): CController->runAction(Object(CViewAction))
+#4 C:\sites\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 C:\sites\yii\framework\web\CWebApplication.php(276): CController->run('page')
+#6 C:\sites\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/page')
+#7 C:\sites\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\sites\Photo\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/Photo/index.php?r=site/page
+HTTP_REFERER=http://localhost/Photo/index.php?r=site/index
+---
+2012/10/22 15:23:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "services".' in C:\sites\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\sites\yii\framework\web\CController.php(271): CController->missingAction('services')
+#1 C:\sites\yii\framework\web\CWebApplication.php(276): CController->run('services')
+#2 C:\sites\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/services')
+#3 C:\sites\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\sites\Photo\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Photo/index.php?r=site/services
+HTTP_REFERER=http://localhost/Photo/index.php?r=site/contact
+---
+2012/10/22 15:23:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "portfolio".' in C:\sites\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\sites\yii\framework\web\CController.php(271): CController->missingAction('portfolio')
+#1 C:\sites\yii\framework\web\CWebApplication.php(276): CController->run('portfolio')
+#2 C:\sites\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/portfolio')
+#3 C:\sites\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\sites\Photo\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Photo/index.php?r=site/portfolio
+HTTP_REFERER=http://localhost/Photo/index.php?r=site/contact
+---
+2012/10/22 15:23:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "services".' in C:\sites\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\sites\yii\framework\web\CController.php(271): CController->missingAction('services')
+#1 C:\sites\yii\framework\web\CWebApplication.php(276): CController->run('services')
+#2 C:\sites\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/services')
+#3 C:\sites\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\sites\Photo\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Photo/index.php?r=site/services
+HTTP_REFERER=http://localhost/Photo/index.php?r=site/portfolio
+---
+2012/10/22 15:23:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "portfolio".' in C:\sites\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\sites\yii\framework\web\CController.php(271): CController->missingAction('portfolio')
+#1 C:\sites\yii\framework\web\CWebApplication.php(276): CController->run('portfolio')
+#2 C:\sites\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/portfolio')
+#3 C:\sites\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\sites\Photo\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Photo/index.php?r=site/portfolio
+HTTP_REFERER=http://localhost/Photo/index.php?r=site/index
+---
+2012/10/22 15:23:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "services".' in C:\sites\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\sites\yii\framework\web\CController.php(271): CController->missingAction('services')
+#1 C:\sites\yii\framework\web\CWebApplication.php(276): CController->run('services')
+#2 C:\sites\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/services')
+#3 C:\sites\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\sites\Photo\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Photo/index.php?r=site/services
+HTTP_REFERER=http://localhost/Photo/index.php?r=site/portfolio
+---
+2012/10/22 15:23:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "portfolio".' in C:\sites\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\sites\yii\framework\web\CController.php(271): CController->missingAction('portfolio')
+#1 C:\sites\yii\framework\web\CWebApplication.php(276): CController->run('portfolio')
+#2 C:\sites\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/portfolio')
+#3 C:\sites\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\sites\Photo\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Photo/index.php?r=site/portfolio
+HTTP_REFERER=http://localhost/Photo/index.php?r=site/contact
+---
+2012/10/22 15:23:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "portfolio".' in C:\sites\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\sites\yii\framework\web\CController.php(271): CController->missingAction('portfolio')
+#1 C:\sites\yii\framework\web\CWebApplication.php(276): CController->run('portfolio')
+#2 C:\sites\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/portfolio')
+#3 C:\sites\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\sites\Photo\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Photo/index.php?r=site/portfolio
+HTTP_REFERER=http://localhost/Photo/index.php?r=site/index
+---
+2012/10/22 15:25:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "portfolio".' in C:\sites\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\sites\yii\framework\web\CController.php(271): CController->missingAction('portfolio')
+#1 C:\sites\yii\framework\web\CWebApplication.php(276): CController->run('portfolio')
+#2 C:\sites\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/portfolio')
+#3 C:\sites\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\sites\Photo\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Photo/index.php?r=site/portfolio
+HTTP_REFERER=http://localhost/Photo/index.php?r=site/index
+---
+2012/10/22 15:25:42 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "services".' in C:\sites\yii\framework\web\CController.php:879
+Stack trace:
+#0 C:\sites\yii\framework\web\CController.php(783): CController->renderPartial('services', NULL, true)
+#1 C:\sites\Photo\protected\controllers\SiteController.php(71): CController->render('services')
+#2 C:\sites\yii\framework\web\actions\CInlineAction.php(50): SiteController->actionServices()
+#3 C:\sites\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\sites\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#5 C:\sites\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\sites\yii\framework\web\CWebApplication.php(276): CController->run('services')
+#7 C:\sites\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/services')
+#8 C:\sites\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\sites\Photo\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/Photo/index.php?r=site/services
+HTTP_REFERER=http://localhost/Photo/index.php?r=site/portfolio
+---

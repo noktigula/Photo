@@ -36,21 +36,33 @@
 						$width = $size[0];
 						$height = $size[1];
 						
-						$width = 500;
+						/**
+						 TODO: перенести все в js
+						 подгонять размер изображения под размер div`а
+						 */
+						
+						if ($width >= $height)
+						{
+							$width = 500;
+						
+							$coeff = $width / $size[0];
+							$height *= $coeff;
 							
-						echo "<li>";
-						echo "<img style='position:relative;' width='$width' src='$filename' />";
-						echo "</li>";
-						/*} // if
+							echo "<li>";
+							echo "<img style='position:relative;' width='$width' height='$height' src='$filename' />";
+							echo "</li>";
+						} // if
 						else
 						{
 							$height = 500;
+							$coeff = $height / $size[1];
+							$width *= $coeff;
 							
 							echo "<li>";
-							echo "<img style='position:relative;' height='$height' src='$filename' />";
+							echo "<img style='position:relative;' width='$width'  height='$height' src='$filename' />";
 							echo "</li>";
 						} // else
-						*/
+						
 					} // foreach
 				 ?>
 				
@@ -77,9 +89,9 @@
 				<?php $this->widget('zii.widgets.CMenu',array(
 					'items'=>array(
 						array('label'=>'Главная', 'url'=>array('/site/index')),
-						array('label'=>'Портфолио', 'url'=>array('/site/page'), 'visible'=>true),
-						array('label'=>'Услуги', 'url'=>array('/site/contact'), 'visible'=>true),
-						array('label'=>'Контакты', 'url'=>array('/site/login'), 'visible'=>true),
+						array('label'=>'Портфолио', 'url'=>array('/site/portfolio'), 'visible'=>true),
+						array('label'=>'Услуги', 'url'=>array('/site/services'), 'visible'=>true),
+						array('label'=>'Контакты', 'url'=>array('/site/contact'), 'visible'=>true),
 						//array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 					),
 				)); ?>
@@ -109,11 +121,11 @@
 
 <script>
   $("#slideshow").craftyslide({
-	  'width': 500,//document.getElementById('myGallery').offsetWidth,
-	  'height': 500,//document.getElementById('myGallery').offsetWidth,
+	  'width': document.getElementById('myGallery').offsetWidth,
+	  'height': document.getElementById('myGallery').offsetHeight,
 	  'pagination': false,
-	  'fadetime': 600,
-	  'delay': 600
+	  'fadetime': 2000,
+	  'delay': 3000
   });
 </script>
 </html>
