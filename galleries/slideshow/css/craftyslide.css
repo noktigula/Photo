@@ -1,0 +1,45 @@
+/*
+Craftyslide CSS Styles
+*/
+
+slideshow {
+	margin:0;
+	padding:0;
+	position:relative;
+}
+
+#slideshow ul {
+	position:relative;
+	margin:0;
+	padding:0;
+}
+
+#slideshow ul li {
+	position:absolute;
+	list-style:none;
+}
+
+#pagination li {
+	list-style:none;
+	float:center;
+}
+
+#pagination li a {
+	display:block;
+	text-indent:-10000px;
+	background:url(../images/pagination.png);
+}
+
+#pagination li a.active {
+}
+
+.caption {
+	margin:0;
+	position:absolute;
+	left:0;
+	font-family:Helvetica, Arial, sans-serif;
+	font-size:14px;
+	font-weight:lighter;
+	color:#fff;
+	background:rgba(0,0,0,0.6);
+}
