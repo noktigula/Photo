@@ -16,13 +16,27 @@
 
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/galleries/slideshow/css/craftyslide.css" />
 	
-	<script src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
-	<script src="<?php echo Yii::app()->request->baseUrl; ?>/galleries/slideshow/js/craftyslide.js"></script>
+	<script type='text/javascript' src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
+	<script type='text/javascript' src="<?php echo Yii::app()->request->baseUrl; ?>/galleries/slideshow/js/craftyslide.js"></script>
+	
 	
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
 <body>
+<?php 
+	
+	$cs = Yii::app()->clientScript;
+	if ($cs)
+	{
+		$cs->registerScriptFile('js/'.'menuRoll.js'); 
+	} // if $cs
+	else
+	{
+		echo "trololo!";
+	} // else	
+	
+?>
 
 <div class="main">
 	<div class="preview">

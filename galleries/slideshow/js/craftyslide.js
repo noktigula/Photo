@@ -6,7 +6,6 @@
 * License: MIT license
 * Updated: 7th June 2011
 */
-
 (function ($) {
     $.fn.craftyslide = function (options) {
 
