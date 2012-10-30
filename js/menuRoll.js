@@ -1,41 +1,44 @@
 $(document).ready(
 function()
 {
-	$('ul li div').mouseenter(
+	$('ul li > div').mouseenter(
 		function()
 		{
-			roll($(this));
+            if(!($(this).parent().attr("class") == "active"))
+            {
+                    roll($(this));
+            }//if
 		} // handler
 	); //mousenter property
 	
 	function stepOne(param)
 	{
 		param.animate(
-			{ top:'+=50' }, 100, function(){}
+			{ top:'+=25' }, 150, function(){}
 					  );
 	} // stepOne
 	
 	function stepTwo(param)
 	{
 		param.animate(
-			{opacity:0, top:'-=100'}, 1, function(){}
+			{opacity:0, top:'-=50'}, 1, function(){}
 		);
 	} // stepTwo
 	
 	function stepThree(param)
 	{
 		param.animate(
-			{opacity:1, top:"+=50"}, 100, function(){}
+			{opacity:1, top:"+=25"}, 150, function(){}
 		);
 	} // stepThree
 	
 	function roll(param)
 	{
-		for (var i = 0; i <  2; ++i)
-		{
+		//for (var i = 0; i <  2; ++i)
+		//{
 			stepOne(param);
 			stepTwo(param);
 			stepThree(param);
-		} // for
+		//} // for
 	} // roll
 });

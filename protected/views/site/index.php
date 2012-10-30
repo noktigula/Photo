@@ -1,3 +1,6 @@
-﻿<?php $this->pageTitle=Yii::app()->name; ?>
+﻿<?php 
+//echo Yii::app()->controller->action->id;
+$this->pageTitle=Yii::app()->name; 
+?>
 
 Здесь текст для главной, пиши его сам
