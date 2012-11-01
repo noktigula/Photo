@@ -100,22 +100,24 @@
 			var img = jQuery.makeArray(document.getElementsByTagName("img"));
 			for(var i = 0; i < img.length; ++i)
 			{
-				var w = img[i].width;
-				var h = img[i].height;
-				//alert("image w="+w+" h="+h);
-				
-				var hCenter = (0.5 * options.height);
-				var imgHCenter = (0.5 * h);
-				var $hh = (hCenter - imgHCenter) + 'px';
-				//alert("hCenter=" + hCenter + "\nimgHCenter=" + imgHCenter + "\nmarginTop="+$hh);
-				img[i].style.marginTop = $hh; 
-			
-				var wCenter = (0.5 * options.width);
-				var imgWCenter = (0.5 * w);
-				var $ww = (wCenter - imgWCenter) + 'px';
-				//alert("wCenter=" + wCenter + "\nimgWCenter=" + imgWCenter + "\nmarginLeft="+$ww);
-				img[i].style.marginLeft = $ww;
-				
+                if(img[i].parentNode.tagName == 'LI')
+                {
+                    var w = img[i].width;
+                    var h = img[i].height;
+                    //alert("image w="+w+" h="+h);
+
+                    var hCenter = (0.5 * options.height);
+                    var imgHCenter = (0.5 * h);
+                    var $hh = (hCenter - imgHCenter) + 'px';
+                    //alert("hCenter=" + hCenter + "\nimgHCenter=" + imgHCenter + "\nmarginTop="+$hh);
+                    img[i].style.marginTop = $hh;
+
+                    var wCenter = (0.5 * options.width);
+                    var imgWCenter = (0.5 * w);
+                    var $ww = (wCenter - imgWCenter) + 'px';
+                    //alert("wCenter=" + wCenter + "\nimgWCenter=" + imgWCenter + "\nmarginLeft="+$ww);
+                    img[i].style.marginLeft = $ww;
+                } // if
 			} // for 
 			
             // Check Boolean values

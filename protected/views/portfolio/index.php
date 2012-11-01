@@ -1,0 +1,171 @@
+<?php
+/**
+ * Created by JetBrains PhpStorm.
+ * User: grishin
+ * Date: 31.10.12
+ * Time: 11:32
+ * To change this template use File | Settings | File Templates.
+ */
+    $filePath = "";//Yii::app()->request->baseUrl;
+    switch ($category)
+    {
+        case INDEX:
+        {
+            showCategories($category);
+            break;
+        } // case Index
+
+        case WEDDING:
+        {
+            $filePath .= "images/weddings";
+            break;
+        } // case WEDDING
+
+        case PORTRAIT:
+        {
+            $filePath .= "images/portraits";
+            break;
+        } // PORTRAIT
+
+        case KIDS:
+        {
+            showCategories($category);
+            break;
+        } // case KIDS
+
+        case KIDS_BABY:
+        {
+            $filePath .= "images/babies";
+            break;
+        } // case KIDS_BABY
+
+        case KIDS_1_3:
+        {
+            $filePath .= "images/kids_one_three";
+            break;
+        } // case KIDS_BABY
+
+        case KIDS_3_13:
+        {
+            $filePath .= "images/kids_three_up";
+            break;
+        } // case KIDS_3_13
+
+        case FAMILY:
+        {
+            $filePath .= "images/family";
+            break;
+        } // case FAMILY
+
+        case DIFFERENT:
+        {
+            $filePath .= "images/different";
+            break;
+        } // case FAMILY
+
+        default:
+        {
+            break;
+        } // def
+    } // switch
+
+    if ($filePath !== Yii::app()->request->baseUrl)
+    {
+        echo "yep!";
+        showPhotoTable($filePath);
+    } // if
+    else
+    {
+        // top-level menus, don`t show table with photos
+    } // else
+
+function showCategories($type)
+{
+    $allCat = array('Свадьбы' => Yii::app()->getUrlManager()->createUrl('/portfolio/weddings'),
+                    'Портреты' => Yii::app()->getUrlManager()->createUrl('/portfolio/portraits'),
+                    'Дети' => Yii::app()->getUrlManager()->createUrl('/portfolio/kids'),
+                    'Семейное фото' => Yii::app()->getUrlManager()->createUrl('/portfolio/family'),
+                    'Разное' => Yii::app()->getUrlManager()->createUrl('/portfolio/different'));
+
+    $kidCat = array('Младенцы' => Yii::app()->getUrlManager()->createUrl('/portfolio/babies'),
+                    'Дети от 1 до 3 лет' => Yii::app()->getUrlManager()->createUrl('/portfolio/oneThree'),
+                    'Дети от 3 до 13 лет' => Yii::app()->getUrlManager()->createUrl('portfolio/threeUp'));
+    echo <<< _END
+    <div id="categories">
+        <ul>
+_END;
+    if ($type == INDEX)
+    {
+       printCategories($allCat);
+    } // if
+    else
+    {
+       printCategories($kidCat);
+    } // else
+    echo <<< _END
+        </ul>
+    </div>
+_END;
+} // showCategories
+
+function printCategories($array)
+{
+    foreach ($array as $key=>$value)
+    {
+        echo "<li><a href='$value'>$key</a></li>";
+    } // foreach
+}
+
+function showPhotoTable($filePath)
+{
+    $count = 0;
+    echo $filePath;
+    echo "<table>";
+    echo "<tr>";
+    foreach (glob($filePath."/*.jpg") as $filename)
+    {
+        $size = getimagesize($filename);
+        $width = $size[0];
+        $height = $size[1];
+
+        /**
+        TODO: перенести все в js
+        подгонять размер изображения под размер div`а
+         */
+
+        if ($width >= $height)
+        {
+            $width = 150;
+
+            $coeff = $width / $size[0];
+            $height *= $coeff;
+            $height = 100;
+
+            echo "<td align='center' width='150px' border='1' bordercolor='white'>";
+            echo "<a href='' style='margin:0'>";
+            echo "<img width='$width' height='$height' src='$filename' style='margin:0'/>";
+            echo "</a>";
+            echo "</td>";
+        } // if
+        else
+        {
+            $height = 100;
+            $coeff = $height / $size[1];
+            $width *= $coeff;
+            echo "<td align='center' width='150px'  border='1' bordercolor='white'>";
+            echo "<a href='' style='margin:0'>";
+            echo "<img width='$width'  height='$height' src='$filename' style='margin:0'/>";
+            echo "</a>";
+            echo "</td>";
+        } // else
+
+        $count++;
+        if ($count % 4 == 0)
+        {
+            echo "</tr><tr>";
+        } // if
+    } // foreach
+    echo "</tr>";
+    echo "</table>";
+} // showPhotoTable
+?>

@@ -108,26 +108,26 @@ _END;
 
                 <div id="mainmenu">
 _END;
-                     $this->widget('zii.widgets.CMenu',array(
-                        'items'=>array(
-                            array('label'=>'Главная', 'url'=>array('/site/index')),
-                            array('label'=>'Портфолио', 'url'=>array('/site/portfolio'), 'items'=>array(
-                                array('label'=>'Свадьбы', 'url'=>array('/site/category1')),
-                                array('label'=>'Портретная съемка', 'url'=>array('/site/category1')),
-                                array('label'=>'Дети', 'url'=>array('/site/category1'), 'items'=>array(
-                                    array('label'=>'Младенцы', 'url'=>array('site/kids1')),
-                                    array('label'=>'Дети от 1 до 3 лет', 'url'=>array('site/kids1')),
-                                    array('label'=>'Дети от 3 до 13 лет', 'url'=>array('site/kids1')),
-                                    )//3rd menu - kids
-                                ), // end of 'portfolio' item
-                                array('label'=>'Семейное фото', 'url'=>array('/site/category1')),
-                                array('label'=>'Разное', 'url'=>array('/site/category1')),
-                            ), 'visible'=>true), // 2nd menu
-                            array('label'=>'Услуги', 'url'=>array('/site/services'), 'visible'=>true),
-                            array('label'=>'Контакты', 'url'=>array('/site/contact'), 'visible'=>true),
-                            //array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-                        ),
-                    ));
+                $this->widget('zii.widgets.CMenu',array(
+                    'items'=>array(
+                        array('label'=>'Главная', 'url'=>array('/site/index'), 'id'=>'olololo'),
+                        array('label'=>'Портфолио', 'url'=>array('/portfolio/index'), 'items'=>array(
+                            array('label'=>'Свадьбы', 'url'=>array('/portfolio/weddings')),
+                            array('label'=>'Портретная съемка', 'url'=>array('/portfolio/portraits')),
+                            array('label'=>'Дети', 'url'=>array('/portfolio/kids'), 'items'=>array(
+                                array('label'=>'Младенцы', 'url'=>array('/portfolio/babies')),
+                                array('label'=>'Дети от 1 до 3 лет', 'url'=>array('/portfolio/onethree')),
+                                array('label'=>'Дети от 3 до 13 лет', 'url'=>array('/portfolio/threeup')),
+                            )//3rd menu - kids
+                            ), // end of 'portfolio' item
+                            array('label'=>'Семейное фото', 'url'=>array('/portfolio/family')),
+                            array('label'=>'Разное', 'url'=>array('/portfolio/different')),
+                        ), 'visible'=>true), // 2nd menu
+                        array('label'=>'Услуги', 'url'=>array('/site/services'), 'visible'=>true),
+                        array('label'=>'Контакты', 'url'=>array('/site/contact'), 'visible'=>true),
+                        //array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+                    ),
+                ));
 
                 echo "</div><!-- mainmenu -->";
               /*  if(isset($this->breadcrumbs))
@@ -168,17 +168,17 @@ _END;
                      $this->widget('zii.widgets.CMenu',array(
                          'items'=>array(
                              array('label'=>'Главная', 'url'=>array('/site/index'), 'id'=>'olololo'),
-                             array('label'=>'Портфолио', 'url'=>array('/site/portfolio'), 'items'=>array(
-                                 array('label'=>'Свадьбы', 'url'=>array('/site/category1')),
-                                 array('label'=>'Портретная съемка', 'url'=>array('/site/category1')),
-                                 array('label'=>'Дети', 'url'=>array('/site/category1'), 'items'=>array(
-                                     array('label'=>'Младенцы', 'url'=>array('site/kids1')),
-                                     array('label'=>'Дети от 1 до 3 лет', 'url'=>array('site/kids1')),
-                                     array('label'=>'Дети от 3 до 13 лет', 'url'=>array('site/kids1')),
+                             array('label'=>'Портфолио', 'url'=>array('/portfolio/index'), 'items'=>array(
+                                 array('label'=>'Свадьбы', 'url'=>array('/portfolio/weddings')),
+                                 array('label'=>'Портретная съемка', 'url'=>array('/portfolio/portraits')),
+                                 array('label'=>'Дети', 'url'=>array('/portfolio/kids'), 'items'=>array(
+                                     array('label'=>'Младенцы', 'url'=>array('/portfolio/babies')),
+                                     array('label'=>'Дети от 1 до 3 лет', 'url'=>array('/portfolio/oneThree')),
+                                     array('label'=>'Дети от 3 до 13 лет', 'url'=>array('/portfolio/threeUp')),
                                  )//3rd menu - kids
                                  ), // end of 'portfolio' item
-                                 array('label'=>'Семейное фото', 'url'=>array('/site/category1')),
-                                 array('label'=>'Разное', 'url'=>array('/site/category1')),
+                                 array('label'=>'Семейное фото', 'url'=>array('/portfolio/family')),
+                                 array('label'=>'Разное', 'url'=>array('/portfolio/different')),
                              ), 'visible'=>true), // 2nd menu
                              array('label'=>'Услуги', 'url'=>array('/site/services'), 'visible'=>true),
                              array('label'=>'Контакты', 'url'=>array('/site/contact'), 'visible'=>true),
@@ -252,6 +252,7 @@ else
         navBackground:'black',
         background:'black',
         fullscreenIcon:true,
+        preload:4,
         });
     });
 

@@ -277,10 +277,10 @@ html
     min-height:80%;
     height:80%;
     width:75%;
-    /*border:1px solid red;*/
+    border:1px solid red;
     position: absolute;
     margin: 0 auto;
-    left:10%;
+    left:12%;
     margin-top: 5%;
 }
 
@@ -441,7 +441,7 @@ html
     display: none;
     position: absolute;
     left:200px;
-    top: 42px;
+    top: 44px;
 }
 
 #mainmenu_gallery ul li ul li > ul li {
@@ -467,6 +467,29 @@ html
 /**********************/
 /*Снова общие элементы*/
 /**********************/
+#categories ul
+{
+    padding:6px 20px 5px 20px;
+    margin:0px;
+    display: block;
+    list-style: none;
+}
+
+#categories ul li a
+{
+    color:#a6a6a6;
+    background-color:transparent;
+    font-size:14pt;
+    font-weight:bold;
+    text-decoration:none;
+    padding:5px 8px;
+}
+
+#categories ul li a:hover
+{
+    color: white;
+    text-decoration:none;
+}
 
 div.flash-error, div.flash-notice, div.flash-success
 {
