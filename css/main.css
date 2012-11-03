@@ -82,11 +82,6 @@ html
 	padding: 0;
 }
 
-#content
-{
-    padding: 20px;
-}
-
 #image-show
 {
 	position:relative;
@@ -467,6 +462,11 @@ html
 /**********************/
 /*Снова общие элементы*/
 /**********************/
+/*#categories
+{
+    margin-left:47%;
+}*/
+
 #categories ul
 {
     padding:6px 20px 5px 20px;

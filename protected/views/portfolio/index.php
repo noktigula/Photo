@@ -69,9 +69,9 @@
         } // def
     } // switch
 
-    if ($filePath !== Yii::app()->request->baseUrl)
+    if ($filePath != "")
     {
-        echo "yep!";
+        //echo "yep!";
         showPhotoTable($filePath);
     } // if
     else
@@ -92,7 +92,7 @@ function showCategories($type)
                     'Дети от 3 до 13 лет' => Yii::app()->getUrlManager()->createUrl('portfolio/threeUp'));
     echo <<< _END
     <div id="categories">
-        <ul>
+        <ul align='center'>
 _END;
     if ($type == INDEX)
     {
@@ -112,17 +112,17 @@ function printCategories($array)
 {
     foreach ($array as $key=>$value)
     {
-        echo "<li><a href='$value'>$key</a></li>";
+        echo "<li ><a href='$value'>$key</a></li>";
     } // foreach
 }
 
 function showPhotoTable($filePath)
 {
     $count = 0;
-    echo $filePath;
+    //echo $filePath;
     echo "<table>";
     echo "<tr>";
-    foreach (glob($filePath."/*.jpg") as $filename)
+    foreach (glob($filePath."/thumbs/*.jpg") as $filename)
     {
         $size = getimagesize($filename);
         $width = $size[0];
@@ -133,6 +133,8 @@ function showPhotoTable($filePath)
         подгонять размер изображения под размер div`а
          */
 
+        $ref =  Yii::app()->getUrlManager()->createUrl('/portfolio/showGallery', array("filepath" => $filePath, "initial" => $count));
+
         if ($width >= $height)
         {
             $width = 150;
@@ -142,7 +144,7 @@ function showPhotoTable($filePath)
             $height = 100;
 
             echo "<td align='center' width='150px' border='1' bordercolor='white'>";
-            echo "<a href='' style='margin:0'>";
+            echo "<a href='$ref' style='margin:0'>";
             echo "<img width='$width' height='$height' src='$filename' style='margin:0'/>";
             echo "</a>";
             echo "</td>";
@@ -153,7 +155,7 @@ function showPhotoTable($filePath)
             $coeff = $height / $size[1];
             $width *= $coeff;
             echo "<td align='center' width='150px'  border='1' bordercolor='white'>";
-            echo "<a href='' style='margin:0'>";
+            echo "<a href='$ref' style='margin:0'>";
             echo "<img width='$width'  height='$height' src='$filename' style='margin:0'/>";
             echo "</a>";
             echo "</td>";

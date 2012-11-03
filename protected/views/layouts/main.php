@@ -17,7 +17,7 @@
     <script type='text/javascript' src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
 
     <?php
-        if (Yii::app()->controller->action->id != "portfolio")
+        if (Yii::app()->controller->id != "portfolio")
         {
             ?>
             <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/galleries/slideshow/css/craftyslide.css" />
@@ -47,7 +47,7 @@
 ?>
 
 <?php
-if (Yii::app()->controller->action->id != "portfolio")
+if (Yii::app()->controller->id != "portfolio")
 {
     // Design for 2-column view (without gallery)
     echo <<< _END
@@ -196,15 +196,15 @@ _END;
                 }  // breadcrumbs -->*/
     echo <<< _END
                <div class='gallery_gallery' id='gallery_gallery'>
-                   <div id='fotorama'>
+                <!--   <div id='fotorama'> -->
 _END;
-                     foreach (glob("images/*.jpg") as $filename)
+                     /*foreach (glob("images/*.jpg") as $filename)
                      {
                         echo "<img src='$filename'/>";
-                     } // foreach
-
+                     } // foreach */
+                    echo $content;
     echo <<< _END
-                   </div>
+                <!--   </div> -->
                 </div>
 
                 <div class="clear_gallery"></div>
@@ -226,7 +226,7 @@ _END;
 </body>
 
 <?php
-if (Yii::app()->controller->action->id != "portfolio")
+if (Yii::app()->controller->id != "portfolio")
 {
     echo <<< _END
     <script>
@@ -242,22 +242,24 @@ _END;
 } // if
 else
 {
-    echo <<< _END
+  /* echo <<< _END
     <script>
 
-    $(function() {
-        $('#fotorama').fotorama({
+    $(function()
+   {
+        $('#fotorama').fotorama(
+        {
         width:document.getElementById('gallery_gallery').offsetWidth,
         height:document.getElementById('gallery_gallery').offsetHeight,
         navBackground:'black',
         background:'black',
         fullscreenIcon:true,
-        preload:4,
+        preload:4
         });
     });
 
     </script>
-_END;
+_END; */
 } // else
 ?>
 

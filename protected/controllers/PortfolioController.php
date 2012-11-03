@@ -81,4 +81,9 @@ class PortfolioController extends Controller
     {
         $this->render('index', array('category' => DIFFERENT));
     } // actionDifferent
+
+    public function actionShowGallery($filepath, $initial)
+    {
+        $this->render('gallery', array('filepath' => $filepath, 'initial'=>$initial));
+    } // actionShowGallery
 } // class PortfolioController
