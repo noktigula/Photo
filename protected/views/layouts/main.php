@@ -17,7 +17,7 @@
     <script type='text/javascript' src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
 
     <?php
-        if (Yii::app()->controller->id != "portfolio")
+        if (Yii::app()->controller->id != "portfolio" && Yii::app()->controller->action->id != "services")
         {
             ?>
             <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/galleries/slideshow/css/craftyslide.css" />
@@ -44,10 +44,27 @@
 	{
 		$cs->registerScriptFile('js/'.'menuRoll.js'); 
 	} // if $cs
+   /* echo <<< _END
+   <!--  <div>
+
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="780" height="420">
+        <param name="movie" value="sounds/fon1.swf" />
+
+        <!--[if !IE]>-->
+        <object type="application/x-shockwave-flash" data="sounds/fon1.swf" width="780" height="420">
+
+        <!--[if !IE]>-->
+        </object>
+        <!--<![endif]-->
+
+      </object>
+
+    </div> -->
+_END; */
 ?>
 
 <?php
-if (Yii::app()->controller->id != "portfolio")
+if (Yii::app()->controller->id != "portfolio" && Yii::app()->controller->action->id != "services")
 {
     // Design for 2-column view (without gallery)
     echo <<< _END
@@ -57,7 +74,7 @@ if (Yii::app()->controller->id != "portfolio")
                 <div id="slideshow">
                   <ul>
 _END;
-                        foreach (glob("images/*.jpg") as $filename)
+                        foreach (glob("images/slideshow/*.jpg") as $filename)
                         {
                             $size = getimagesize($filename);
                             $width = $size[0];
@@ -97,7 +114,12 @@ _END;
             </div>
         </div>
         <div class="logo" >
-        <!--	<img src="logo.png" width="20%" height="20%"> -->
+       <!-- <h2>Владимир Трифонов</h2>
+        <h2><sup>Фотограф</sup></h2> -->
+        <div class='music'>
+
+        </div>
+
         </div>
         <div class="info_block">
             <div class="container" id="page">
@@ -138,17 +160,20 @@ _END;
                 }  // breadcrumbs -->*/
 
                 echo "<br />".$content;
+
     echo <<< _END
+
                 <div class="clear"></div>
 
             </div><!-- page -->
         </div>
         <div class="push">
         </div>
+
     </div>
-    <div id="footer">
-            Copyright &copy; <?php echo date('Y'); ?> Владимир Трифонов<br/>
-            8-9№№-№№№-№№-№№<br/>
+     <div id="footer">
+            Copyright &copy; <?php echo date('Y'); ?> Vladimir Trifonov<br/>
+            8-909-990-89-59<br/>
 
     </div><!-- footer -->
     </div>
@@ -215,8 +240,8 @@ _END;
         </div>
     </div>
     <div id="footer">
-            Copyright &copy; <?php echo date('Y'); ?> Владимир Трифонов<br/>
-            8-9№№-№№№-№№-№№<br/>
+            Copyright &copy; <?php echo date('Y'); ?> Vladimir Trifonov<br/>
+            8-909-990-89-59<br/>
 
     </div><!-- footer -->
     </div>
@@ -226,7 +251,7 @@ _END;
 </body>
 
 <?php
-if (Yii::app()->controller->id != "portfolio")
+if (Yii::app()->controller->id != "portfolio" && Yii::app()->controller->action->id != "services")
 {
     echo <<< _END
     <script>

@@ -59,7 +59,7 @@ class PortfolioController extends Controller
 
     public function  actionBabies()
     {
-        $this->render('index', array('category' => KID_BABY));
+        $this->render('index', array('category' => KIDS_BABY));
     } // actionBabies
 
     public function  actionOneThree()

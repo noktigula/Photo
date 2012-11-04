@@ -143,9 +143,9 @@ function showPhotoTable($filePath)
             $height *= $coeff;
             $height = 100;
 
-            echo "<td align='center' width='150px' border='1' bordercolor='white'>";
+            echo "<td align='center' width='150px' >";
             echo "<a href='$ref' style='margin:0'>";
-            echo "<img width='$width' height='$height' src='$filename' style='margin:0'/>";
+            echo "<img width='$width' height='$height' src='$filename' style='margin:0;border:1px solid #c7c7c7'/>";
             echo "</a>";
             echo "</td>";
         } // if
@@ -154,9 +154,9 @@ function showPhotoTable($filePath)
             $height = 100;
             $coeff = $height / $size[1];
             $width *= $coeff;
-            echo "<td align='center' width='150px'  border='1' bordercolor='white'>";
+            echo "<td align='center' width='150px' >";
             echo "<a href='$ref' style='margin:0'>";
-            echo "<img width='$width'  height='$height' src='$filename' style='margin:0'/>";
+            echo "<img width='$width'  height='$height' src='$filename' style='margin:0;border:1px solid #c7c7c7'/>";
             echo "</a>";
             echo "</td>";
         } // else

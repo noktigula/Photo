@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 class SiteController extends Controller
 {
@@ -63,7 +63,7 @@ class SiteController extends Controller
 				$this->refresh();
 			}
 		}
-		$this->render('contact',array('model'=>$model));
+		$this->render('contact',array('model'=>$model, 'success'=>'empty'));
 	}
 	
 	public function actionServices()
@@ -110,4 +110,24 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+
+    public function actionSendMail()
+    {
+        if (!empty($_POST['name']) && !empty($_POST['from']) && !empty($_POST['message']) )
+        {
+            $to = "vt-photo@mail.ru";
+            $subject = "Сообщение от пользователя vt-photo.ru";
+            //$subject = iconv('UTF-8', 'windows-1251', $subject);
+            $message = $_POST['message'];
+            $message .= "\n Отправлено от ".$_POST['name']." ".$_POST['from'];
+            $from = $_POST['from'];
+            $message = iconv('UTF-8', 'windows-1251', $message);
+            mail($to, $subject, $message, $from);
+            $this->render('contact', array('success' => 'ok'));
+        } // if
+        else
+        {
+            $this->render('contact', array('success' => 'not_ok'));
+        } // else
+    } // action ShowGallery
 }

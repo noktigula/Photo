@@ -29,9 +29,17 @@ html
 {
 	min-height:10%;
 	height:10%;
-	width:30%;
+	width:60%;
 	float:right;
     /*border: 1px solid #a0ffa0;*/
+}
+
+.music
+{
+    width:50%;
+    /*border:1px dashed #ffffff;*/
+    float:right;
+    height:100%;
 }
 
 .info_block
@@ -272,7 +280,7 @@ html
     min-height:80%;
     height:80%;
     width:75%;
-    border:1px solid red;
+   /* border:1px solid red; */
     position: absolute;
     margin: 0 auto;
     left:12%;
@@ -410,7 +418,7 @@ html
     margin: 0;
     width: 200px;
     text-align: left;
-    border-top: 1px solid white;
+   /* border-top: 1px solid white; */
 }
 #mainmenu_gallery ul li div > ul li a {
     color:#a6a6a6;

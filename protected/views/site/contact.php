@@ -1,84 +1,45 @@
 
 <?php
-$this->pageTitle=Yii::app()->name . ' - Contact Us';
-$this->breadcrumbs=array(
-	'Contact',
-);
+$this->pageTitle=Yii::app()->name;
 ?>
 
-<h1>Contact Us</h1>
+<br />
 
-<?php/* if(Yii::app()->user->hasFlash('contact')): */?>
+<div class="form">
 
-<!--
-<div class="flash-success">
-	<?php /*echo Yii::app()->user->getFlash('contact');*/ ?>
-</div> -->
+<?php
+    //echo $success;
+    if ($success == "ok")
+    {
+        echo "Спасибо за проявленный интерес.<br />Я обязательно свяжусь с вами!";
+    } // if
+    else if ($success ==  "not_ok")
+    {
+        echo "К сожалению, отправить сообщение не удалось.<br />Попробуйте связаться со мной другим способом.";
+    } // else
+    else
+    {
+        $ref = Yii::app()->getUrlManager()->createUrl('/site/sendMail');
+        echo <<< _END
+        <form action='$ref' method='post'>
+        <table>
+        <tr>
+        <td align='right'>Имя</td><td><input type='text' name='name'></td>
+        </tr>
+        <tr>
+        <td align='right'>E-mail</td><td><input type='text' name='from'></td>
+        </tr>
+        <tr>
+        <td align='right' valign='top'>Сообщение</td><td><textarea rows='10' cols='50' name='message'></textarea></td>
+        </tr>
+        <tr>
+        <td></td><td align='left'><input type='submit' value='Отправить'>
+        </tr>
+        </table>
+        </form>
+_END;
+    } // else
+?>
 
-<?php /*else:*/ ?>
 
-<p>
-If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
-</p>
-
-<!--<div class="form">-->
-
-<?php /*$form=$this->beginWidget('CActiveForm', array(
-	'id'=>'contact-form',
-	'enableClientValidation'=>true,
-	'clientOptions'=>array(
-		'validateOnSubmit'=>true,
-	),
-));*/ ?>
-
-	<!--<p class="note">Fields with <span class="required">*</span> are required.</p> -->
-
-	<?php /*echo $form->errorSummary($model); */?>
-
-<!--	<div class="row">
-		<?php /*echo $form->labelEx($model,'name');*/ ?>
-		<?php /*echo $form->textField($model,'name');*/ ?>
-		<?php /*echo $form->error($model,'name');*/ ?>
-	</div>
--->
-<!-- <div class="row">
-		<?php /*echo $form->labelEx($model,'email');*/ ?>
-		<?php /*echo $form->textField($model,'email');*/ ?>
-		<?php /*echo $form->error($model,'email');*/ ?>
-	</div>
--->
-<!--	<div class="row">
-		<?php /*echo $form->labelEx($model,'subject');*/ ?>
-		<?php /*echo $form->textField($model,'subject',array('size'=>60,'maxlength'=>128));*/ ?>
-		<?php /*echo $form->error($model,'subject');*/ ?>
-	</div>
--->
-<!--	<div class="row">
-		<?php /*echo $form->labelEx($model,'body');*/ ?>
-		<?php /*echo $form->textArea($model,'body',array('rows'=>6, 'cols'=>50));*/?>
-		<?php /*echo $form->error($model,'body');*/ ?>
-	</div>
--->
-	<?php /*if(CCaptcha::checkRequirements()):*/ ?>
-<!--	<div class="row">
-		<?php /*echo $form->labelEx($model,'verifyCode');*/ ?>
-		<div>
-		<?php /*$this->widget('CCaptcha');*/ ?>
-		<?php /*echo $form->textField($model,'verifyCode');*/ ?>
-		</div>
-		<div class="hint">Please enter the letters as they are shown in the image above.
-		<br/>Letters are not case-sensitive.</div>
-		<?php /*echo $form->error($model,'verifyCode');*/ ?>
-	</div>
--->
-	<?php /*endif;*/ ?>
-<!--
-	<div class="row buttons">
-		<?php /*echo CHtml::submitButton('Submit');*/ ?>
-	</div>
--->
-<?php /*$this->endWidget();*/ ?>
-
-<!--</div><!-- form -->
-
-<?php /*endif;*/ ?>
+</div><!-- form -->
