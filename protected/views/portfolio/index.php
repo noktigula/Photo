@@ -1,11 +1,6 @@
 <?php
-/**
- * Created by JetBrains PhpStorm.
- * User: grishin
- * Date: 31.10.12
- * Time: 11:32
- * To change this template use File | Settings | File Templates.
- */
+	$this->pageTitle=Yii::app()->name;
+	
     $filePath = "";//Yii::app()->request->baseUrl;
     switch ($category)
     {

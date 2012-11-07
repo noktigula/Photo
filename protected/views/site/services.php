@@ -1,4 +1,7 @@
 <!--<h1>services</h1>-->
+<?php
+	$this->pageTitle=Yii::app()->name;
+?>
 <div class='service'>
     <table cellpadding="0px" cellspacing="0px" border='0px'>
         <tr>
