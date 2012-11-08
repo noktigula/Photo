@@ -2,10 +2,10 @@ body
 {
 	margin: 0;
 	padding: 0;
-	color: white;
+	color: black;
 	font-family: Palatino, Palatino Lynotype, Garamond, Verdana, Georgia, Times, Arial, Helvetica, serif;
     font-size: 12pt;
-	background: #000000;
+	background: #ffffff;
 	height:100%;
 	min-height:100%;
 	width:100%;
@@ -32,7 +32,7 @@ html
 	height:10%;
 	width:60%;
 	float:right;
-   /* border: 1px solid #a0ffa0;*/
+    /*border: 1px solid #a0ffa0;*/
 }
 
 .themeChange
@@ -98,7 +98,7 @@ html
 
 #page
 {
-	background: black;
+	background: white;
 	min-height: 100%;
 	height:100%;
 }
@@ -133,11 +133,8 @@ html
 #logo
 {
 	padding: 10px 20px;
-	font-size: 18pt;
-    font-family: Palatino, Palatino Lynotype, Garamond, Verdana, Georgia, Times, Arial, Helvetica, serif;
-	color: white;
-    width:60%;
-
+	font-size: 200%;
+	color: white
 }
 
 #mainmenu
@@ -165,7 +162,7 @@ html
 #mainmenu ul li div
 {
 	display:inline;
-    background: #000000;
+    background: #ffffff;
 }
 
 #divMenu
@@ -176,7 +173,7 @@ html
 
 #mainmenu ul li a
 {
-	color:#a6a6a6;
+	color:#858585;
 	background-color:transparent;
 	font-size:18pt;
     font-family: Palatino, Palatino Lynotype, Garamond, Verdana, Georgia, Times, Arial, Helvetica, serif;
@@ -187,13 +184,13 @@ html
 
 #mainmenu ul li a:hover
 {
-	color: white;
+	color: black;
 	text-decoration:none;
 }
 
 #mainmenu ul li.active a
 {
-	color: white;
+	color: black;
 	text-decoration:none;
 }
 
@@ -216,7 +213,7 @@ html
     text-align: left;
 }
 #mainmenu ul li div > ul li a {
-    color:#a6a6a6;
+    color:#858585;
     background-color:transparent;
     font-size:12pt;
     text-decoration:none;
@@ -249,7 +246,7 @@ html
     text-align: left;
 }
 #mainmenu ul li ul li > ul li a {
-    color:#a6a6a6;
+    color:#858585;
     background-color:transparent;
     font-size:12pt;
     text-decoration:none;
@@ -328,7 +325,7 @@ html
 
 #page_gallery
 {
-    background: black;
+    background: white;
     min-height: 100%;
     height:100%;
 }
@@ -400,7 +397,7 @@ html
 
 #mainmenu_gallery ul li a
 {
-    color:#a6a6a6;
+    color:#858585;
     background-color:transparent;
     font-size:18pt;
     text-decoration:none;
@@ -410,13 +407,13 @@ html
 
 #mainmenu_gallery ul li a:hover
 {
-    color: white;
+    color: black;
     text-decoration:none;
 }
 
 #mainmenu_gallery ul li.active > a
 {
-    color: white;
+    color: black;
     text-decoration:none;
 }
 
@@ -430,7 +427,7 @@ html
     left: 0px;
     top: 25px;
     z-index: 100;
-    background: #000000;
+    background: #ffffff;
 }
 
 #mainmenu_gallery ul li div > ul li {
@@ -442,7 +439,7 @@ html
    /* border-top: 1px solid white; */
 }
 #mainmenu_gallery ul li div > ul li a {
-    color:#a6a6a6;
+    color:#858585;
     background-color:transparent;
     font-size:12pt;
     text-decoration:none;
@@ -475,7 +472,7 @@ html
     text-align: left;
 }
 #mainmenu_gallery ul li ul li > ul li a {
-    color:#a6a6a6;
+    color:#858585;
     background-color:transparent;
     font-size:12pt;
     text-decoration:none;
@@ -504,7 +501,7 @@ html
 
 #categories ul li a
 {
-    color:#a6a6a6;
+    color:#858585;
     background-color:transparent;
     font-size:14pt;
     text-decoration:none;
@@ -513,7 +510,7 @@ html
 
 #categories ul li a:hover
 {
-    color: white;
+    color: black;
     text-decoration:none;
 }
 

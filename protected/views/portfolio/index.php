@@ -117,16 +117,18 @@ function showPhotoTable($filePath)
     //echo $filePath;
     echo "<table>";
     echo "<tr>";
+
+    $theme = (isset(Yii::app()->request->cookies['dynamicTheme']->value))
+        ? Yii::app()->request->cookies['dynamicTheme']->value
+        : "dark";
+
+    $borderColor = ($theme == "dark") ? "#ffffff" : "#000000";
+
     foreach (glob($filePath."/thumbs/*.jpg") as $filename)
     {
         $size = getimagesize($filename);
         $width = $size[0];
         $height = $size[1];
-
-        /**
-        TODO: перенести все в js
-        подгонять размер изображения под размер div`а
-         */
 
         $ref =  Yii::app()->getUrlManager()->createUrl('/portfolio/showGallery', array("filepath" => $filePath, "initial" => $count));
 
@@ -140,7 +142,7 @@ function showPhotoTable($filePath)
 
             echo "<td align='center' width='150px' >";
             echo "<a href='$ref' style='margin:0'>";
-            echo "<img width='$width' height='$height' src='$filename' style='margin:0;border:1px solid #c7c7c7'/>";
+            echo "<img width='$width' height='$height' src='$filename' style='margin:0;border:1px solid $borderColor'/>";
             echo "</a>";
             echo "</td>";
         } // if
@@ -151,7 +153,7 @@ function showPhotoTable($filePath)
             $width *= $coeff;
             echo "<td align='center' width='150px' >";
             echo "<a href='$ref' style='margin:0'>";
-            echo "<img width='$width'  height='$height' src='$filename' style='margin:0;border:1px solid #c7c7c7'/>";
+            echo "<img width='$width'  height='$height' src='$filename' style='margin:0;border:1px solid $borderColor'/>";
             echo "</a>";
             echo "</td>";
         } // else

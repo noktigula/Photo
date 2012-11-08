@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 // uncomment the following to define a path alias
 // Yii::setPathOfAlias('local','path/to/local-folder');
@@ -85,6 +85,7 @@ return array(
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
-		'adminEmail'=>'webmaster@example.com',
+		'adminEmail'=>'noktigula@gmail.com',
+        'currentTheme' => 'dark',
 	),
 );

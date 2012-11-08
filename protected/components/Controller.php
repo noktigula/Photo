@@ -20,4 +20,49 @@ class Controller extends CController
 	 * for more details on how to specify this property.
 	 */
 	public $breadcrumbs=array();
+
+    public function beforeAction($action)
+    {
+        //echo Yii::app()->params['currentTheme'];
+        $dynamicTheme = "dark";
+
+        if(isset($_POST['change']))
+        {
+            //echo Yii::app()->params['currentTheme'];
+            //echo "before ".$dynamicTheme;
+            //echo "before ".Yii::app()->params['currentTheme'];
+            if(isset(Yii::app()->request->cookies['dynamicTheme']->value))
+            {
+                if(Yii::app()->request->cookies['dynamicTheme']->value == $dynamicTheme)
+                {
+                    //echo "white, bitch";
+                    $dynamicTheme = "white";
+                } // if dark
+            } // if
+
+            $cookie = new CHttpCookie(
+                "dynamicTheme", $dynamicTheme);
+            $cookie->expire = time()+60*60*24*180;
+            Yii::app()->request->cookies['dynamicTheme'] = $cookie;
+        }
+
+        if(isset(Yii::app()->request->cookies['dynamicTheme']->value))
+        {
+            $dynamicTheme = Yii::app()->request->cookies['dynamicTheme']->value;
+        }
+        else
+        {
+            //Yii::app()->request->cookies['dynamicTheme'] = new CHttpCookie(‘dynamicTheme’, $dynamicTheme);
+            $cookie = new CHttpCookie("dynamicTheme", $dynamicTheme);
+            $cookie->expire = time()+60*60*24*180;
+            Yii::app()->request->cookies['dynamicTheme'] = $cookie;
+        } // else
+
+        //$dynamicTheme = (isset(Yii::app()->request->cookies['dynamicTheme']->value)) ?    Yii::app()->request->cookies['dynamicTheme']->value : ‘classic’;
+
+        //Yii::app()->params['currentTheme'] = $dynamicTheme;
+        //cho "<br />in controller";
+        //echo Yii::app()->params['currentTheme'];
+        return parent::beforeAction($action);
+    } // beforeAction
 }

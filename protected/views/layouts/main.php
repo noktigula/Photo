@@ -11,10 +11,31 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
 	<![endif]-->
 
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
-<!--for git-->
+    <?php
+    //echo "<br />in main, ";
+    //echo Yii::app()->params['currentTheme'];
+    $theme = (isset(Yii::app()->request->cookies['dynamicTheme']->value))
+             ? Yii::app()->request->cookies['dynamicTheme']->value
+             : "dark";
+
+    if ($theme == "dark")
+    {
+        ?>
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
+        <?php
+    } // if
+    else if ($theme == "white")
+    {
+
+        ?>
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main-white.css" />
+        <?php
+    }
+    ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
+
     <script type='text/javascript' src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
+    <script type='text/javascript' src="js/changeTheme.js"></script>
 
     <?php
         if (Yii::app()->controller->id != "portfolio" && Yii::app()->controller->action->id != "services")
@@ -66,6 +87,7 @@ _END; */
 <?php
 if (Yii::app()->controller->id != "portfolio" && Yii::app()->controller->action->id != "services")
 {
+   // echo "loaded anyway";
     // Design for 2-column view (without gallery)
     echo <<< _END
     <div class="main">
@@ -105,8 +127,12 @@ _END;
                                 echo "<img style='position:relative;' width='$width'  height='$height' src='$filename' />";
                                 echo "</li>";
                             } // else
-
                         } // foreach
+    $theme = (isset(Yii::app()->request->cookies['dynamicTheme']->value))
+        ? Yii::app()->request->cookies['dynamicTheme']->value
+        : "dark";
+
+    $changeThemeTo = ($theme == "dark") ? '#ffffff' : '#000000';
     echo <<< _END
                   </ul>
 
@@ -116,9 +142,23 @@ _END;
         <div class="logo" >
        <!-- <h2>Владимир Трифонов</h2>
         <h2><sup>Фотограф</sup></h2> -->
-        <div class='music'>
-
-        </div>
+        <table>
+        <tr>
+            <td align='right'  width='50%'>
+            </td>
+            <td  width='50%'>
+            </td>
+        </tr>
+        <tr width='50%'>
+            <td  width='50%'></td>
+            <td valign='bottom' align='right'  width='50%'>
+                <form method='post'>
+                <input type='hidden' value='1' name='change' />
+                <input type='submit' value = " " class='themeChange' style='background:$changeThemeTo;'/>
+                </form>
+            </td>
+        </tr>
+        </table>
 
         </div>
         <div class="info_block">
@@ -181,10 +221,34 @@ _END;
 } // if
 else
 {
+    $theme = (isset(Yii::app()->request->cookies['dynamicTheme']->value))
+        ? Yii::app()->request->cookies['dynamicTheme']->value
+        : "dark";
+
+    $changeThemeTo = ($theme == "dark") ? '#ffffff' : '#000000';
     echo <<< _END
     <div class="main">
         <div class="logo" >
-        <!--	<img src="logo.png" width="20%" height="20%"> -->
+       <!-- <h2>Владимир Трифонов</h2>
+        <h2><sup>Фотограф</sup></h2> -->
+        <table>
+        <tr>
+            <td align='right'  width='50%'>
+            </td>
+            <td  width='50%'>
+            </td>
+        </tr>
+        <tr width='50%'>
+            <td  width='50%'></td>
+            <td valign='bottom' align='right'  width='50%'>
+                <form method='post'>
+                <input type='hidden' value='1' name='change' />
+                <input type='submit' value = " " class='themeChange' style='background:$changeThemeTo;'/>
+                </form>
+            </td>
+        </tr>
+        </table>
+
         </div>
         <div class="info_block_gallery">
             <div class="container_gallery" id="page">

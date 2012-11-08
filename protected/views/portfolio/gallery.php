@@ -17,6 +17,12 @@ echo "</div>";
 
 echo "</body>";
 
+$theme = (isset(Yii::app()->request->cookies['dynamicTheme']->value))
+    ? Yii::app()->request->cookies['dynamicTheme']->value
+    : "dark";
+
+    $bg = ($theme == "dark") ? "'black'" : "'white'";
+
 echo <<< _END
     <script>
 
@@ -24,8 +30,8 @@ echo <<< _END
         $('#fotorama').fotorama({
         width:document.getElementById('gallery_gallery').offsetWidth,
         height:document.getElementById('gallery_gallery').offsetHeight,
-        navBackground:'black',
-        background:'black',
+        navBackground:$bg,
+        background:$bg,
         fullscreenIcon:true,
         preload:4,
         startImg:$initial

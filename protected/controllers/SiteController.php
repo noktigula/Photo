@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 class SiteController extends Controller
 {
@@ -130,4 +130,24 @@ class SiteController extends Controller
             $this->render('contact', array('success' => 'not_ok'));
         } // else
     } // action ShowGallery
+
+    public function actionSwitchTheme()
+    {
+        if(Yii::app()->params['currentTheme'] == 'dark')
+        {
+            Yii::app()->params['currentTheme'] = 'white';
+        } // if
+        else
+        {
+            Yii::app()->params['currentTheme'] = 'dark';
+        } // else
+
+        switch($action)
+        {
+            case 'index':   $this->actionIndex();
+            case 'services':$this->actionServices();
+            case 'contact': $this->actionContact();
+            default:return;
+        } // switch action
+    } // pub lic function actionSwitchTheme
 }
