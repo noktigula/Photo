@@ -87,7 +87,6 @@ _END; */
 <?php
 if (Yii::app()->controller->id != "portfolio" && Yii::app()->controller->action->id != "services")
 {
-   // echo "loaded anyway";
     // Design for 2-column view (without gallery)
     echo <<< _END
     <div class="main">
@@ -133,33 +132,30 @@ _END;
         : "dark";
 
     $changeThemeTo = ($theme == "dark") ? '#ffffff' : '#000000';
+    $newTheme = ($theme == "dark") ? "white" : "dark";
     echo <<< _END
                   </ul>
 
-                </div>
-            </div>
-        </div>
+                </div> <!-- slideshow -->
+            </div> <!-- gallery -->
+        </div> <!--preview-->
         <div class="logo" >
-       <!-- <h2>Владимир Трифонов</h2>
-        <h2><sup>Фотограф</sup></h2> -->
-        <table>
-        <tr>
-            <td align='right'  width='50%'>
-            </td>
-            <td  width='50%'>
-            </td>
-        </tr>
-        <tr width='50%'>
-            <td  width='50%'></td>
-            <td valign='bottom' align='right'  width='50%'>
-                <form method='post'>
-                <input type='hidden' value='1' name='change' />
-                <input type='submit' value = " " class='themeChange' style='background:$changeThemeTo;'/>
-                </form>
-            </td>
-        </tr>
-        </table>
 
+            <table height='100%'>
+                <tr height='75%'>
+                    <td width='90%'></td>
+                    <td width='10%'></td>
+                </tr>
+                <tr height='25%'>
+                    <td  width='90%' align='right'>Сменить тему</td>
+                    <td  align='left'  width='10%'>
+                        <form method='post'>
+                        <input type='hidden' value='$newTheme' name='change' />
+                        <input type='submit' value = " " class='themeChange' style='background:$changeThemeTo;'/>
+                        </form>
+                    </td>
+                </tr>
+            </table>
         </div>
         <div class="info_block">
             <div class="container" id="page">
@@ -201,22 +197,26 @@ _END;
 
                 echo "<br />".$content;
 
+    $date = date('Y');
     echo <<< _END
 
-                <div class="clear"></div>
+                 <div class="clear"></div>
 
             </div><!-- page -->
+
+        <div class='themeChangeWrapper'>
+
         </div>
+        </div> <!-- info block -->
+
         <div class="push">
         </div>
-
+    </div><!-- main -->
     </div>
      <div id="footer">
-            Copyright &copy; <?php echo date('Y'); ?> Vladimir Trifonov<br/>
-            8-909-990-89-59<br/>
-
+        Copyright &copy; $date Vladimir Trifonov<br/>
+        8-909-990-89-59<br/>
     </div><!-- footer -->
-    </div>
 _END;
 } // if
 else
@@ -226,30 +226,26 @@ else
         : "dark";
 
     $changeThemeTo = ($theme == "dark") ? '#ffffff' : '#000000';
+    $newTheme = ($theme == "dark") ? "white" : "dark";
     echo <<< _END
     <div class="main">
         <div class="logo" >
-       <!-- <h2>Владимир Трифонов</h2>
-        <h2><sup>Фотограф</sup></h2> -->
-        <table>
-        <tr>
-            <td align='right'  width='50%'>
-            </td>
-            <td  width='50%'>
-            </td>
-        </tr>
-        <tr width='50%'>
-            <td  width='50%'></td>
-            <td valign='bottom' align='right'  width='50%'>
-                <form method='post'>
-                <input type='hidden' value='1' name='change' />
-                <input type='submit' value = " " class='themeChange' style='background:$changeThemeTo;'/>
-                </form>
-            </td>
-        </tr>
-        </table>
-
-        </div>
+            <table>
+                <tr>
+                    <td width='90%'></td>
+                    <td width='10%'></td>
+                </tr>
+                <tr>
+                    <td  width='90%' align='right'>Сменить тему</td>
+                    <td  align='left'  width='10%'>
+                        <form method='post'>
+                        <input type='hidden' value='$newTheme' name='change' />
+                        <input type='submit' value = " " class='themeChange' style='background:$changeThemeTo;'/>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div> <!-- logo -->
         <div class="info_block_gallery">
             <div class="container_gallery" id="page">
                 <div id="mainmenu_gallery">
@@ -285,30 +281,27 @@ _END;
                 }  // breadcrumbs -->*/
     echo <<< _END
                <div class='gallery_gallery' id='gallery_gallery'>
-                <!--   <div id='fotorama'> -->
 _END;
-                     /*foreach (glob("images/*.jpg") as $filename)
-                     {
-                        echo "<img src='$filename'/>";
-                     } // foreach */
                     echo $content;
     echo <<< _END
-                <!--   </div> -->
-                </div>
+                </div> <!-- container_gallery -->
 
-                <div class="clear_gallery"></div>
+                <div class="clear_gallery">
+                </div><!--clear_gallery-->
 
             </div><!-- page -->
+
+            <div class='themeChangeWrapper'>
+            </div> <!--theme change wrapper>
         </div>
         <div class="push_gallery">
-        </div>
-    </div>
-    <div id="footer">
-            Copyright &copy; <?php echo date('Y'); ?> Vladimir Trifonov<br/>
-            8-909-990-89-59<br/>
+        </div> <!--push gallery>
+    </div> <!-- main-->
 
-    </div><!-- footer -->
-    </div>
+     <div id="footer">
+                Copyright &copy; <?php echo date('Y'); ?> Vladimir Trifonov<br/>
+                8-909-990-89-59<br/>
+     </div><!-- footer -->
 _END;
 } // else if gallery
 ?>

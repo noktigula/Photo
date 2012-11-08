@@ -23,28 +23,27 @@ class Controller extends CController
 
     public function beforeAction($action)
     {
-        //echo Yii::app()->params['currentTheme'];
         $dynamicTheme = "dark";
 
         if(isset($_POST['change']))
         {
-            //echo Yii::app()->params['currentTheme'];
-            //echo "before ".$dynamicTheme;
-            //echo "before ".Yii::app()->params['currentTheme'];
+            $dynamicTheme = $_POST['change'];
             if(isset(Yii::app()->request->cookies['dynamicTheme']->value))
             {
-                if(Yii::app()->request->cookies['dynamicTheme']->value == $dynamicTheme)
+                Yii::app()->request->cookies['dynamicTheme']->value = $dynamicTheme;
+                /*if(Yii::app()->request->cookies['dynamicTheme']->value != $dynamicTheme)
                 {
                     //echo "white, bitch";
                     $dynamicTheme = "white";
-                } // if dark
+                } // if dark*/
             } // if
 
             $cookie = new CHttpCookie(
                 "dynamicTheme", $dynamicTheme);
             $cookie->expire = time()+60*60*24*180;
             Yii::app()->request->cookies['dynamicTheme'] = $cookie;
-        }
+            unset($_POST['change']);
+        } // if isset $_POST['change']
 
         if(isset(Yii::app()->request->cookies['dynamicTheme']->value))
         {
@@ -52,17 +51,11 @@ class Controller extends CController
         }
         else
         {
-            //Yii::app()->request->cookies['dynamicTheme'] = new CHttpCookie(‘dynamicTheme’, $dynamicTheme);
             $cookie = new CHttpCookie("dynamicTheme", $dynamicTheme);
             $cookie->expire = time()+60*60*24*180;
             Yii::app()->request->cookies['dynamicTheme'] = $cookie;
         } // else
 
-        //$dynamicTheme = (isset(Yii::app()->request->cookies['dynamicTheme']->value)) ?    Yii::app()->request->cookies['dynamicTheme']->value : ‘classic’;
-
-        //Yii::app()->params['currentTheme'] = $dynamicTheme;
-        //cho "<br />in controller";
-        //echo Yii::app()->params['currentTheme'];
         return parent::beforeAction($action);
     } // beforeAction
 }
