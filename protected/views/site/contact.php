@@ -4,9 +4,56 @@ $this->pageTitle=Yii::app()->name;
 ?>
 
 <br />
+<h2>Вы можете связаться со мной удобным для Вас способом:</h2>
+<ul style="list-style: none;">
+    <!-- using div cause gallerific find ul > li images -->
+    <li>
+        <div>
+            <table height='23px'>
+                <tr>
+                    <td valign="center" width="23px">
+                        <img src='images/icons/phone.gif' style="width: 22px;height: 22px;" />
+                    </td>
+                    <td valign="center" align="left">
+                        8-909-990-89-59
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </li>
+    <li><div><a href="http://vk.com/trifonov_vova"><img src='images/icons/button.vkontakte.png' /></a></div></li>
+    <li>
+        <div>
+            <table height='23px'>
+                <tr>
+                    <td valign="center" width="23px">
+                        <img src='images/icons/skype.png' width='22px' height="22px" />
+                    </td>
+                    <td valign="center" align="left">
+                        i_truffel
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </li>
+    <li>
+        <div>
+            <table height='23px'>
+                <tr>
+                    <td valign="center" width="23px">
+                        <img src='images/icons/send.gif' style="width: 22px;height: 22px;" />
+                    </td>
+                    <td valign="center" align="left">
+                        <a href="mailto:i_must@mail.ru">i_must@mail.ru</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </li>
+</ul>
 
+<h3>либо заполнив заявку ниже</h3>
 <div class="form">
-
 <?php
     //echo $success;
     if ($success == "ok")
@@ -30,7 +77,7 @@ $this->pageTitle=Yii::app()->name;
         <td align='right'>E-mail</td><td><input type='text' name='from'></td>
         </tr>
         <tr>
-        <td align='right' valign='top'>Сообщение</td><td><textarea rows='10' cols='50' name='message'></textarea></td>
+        <td align='right' valign='top'>Сообщение</td><td><textarea rows='10' cols='40' name='message'></textarea></td>
         </tr>
         <tr>
         <td></td><td align='left'><input type='submit' value='Отправить'>

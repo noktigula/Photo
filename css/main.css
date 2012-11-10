@@ -9,6 +9,7 @@ body
 	height:100%;
 	min-height:100%;
 	width:100%;
+    overflow-y: hidden;
 }
 
 html
@@ -119,8 +120,55 @@ html
 
 .innerService
 {
-    cellpadding:10px;
-    cellspacing:10px;
+    /*cellpadding:10px;*/
+    /*cellspacing:10px;*/
+}
+
+.innerService h2
+{
+    font-family: Palatino, Palatino Lynotype, Garamond, Verdana, Georgia, Times, Arial, Helvetica, serif;
+    text-decoration: none;
+    margin-top: 0;
+    margin-before:0;
+    -webkit-margin-before:0;
+    -moz-margin-before:0;
+    -o-margin-before:0;
+    -ms-margin-before:0;
+    -khtml-margin-before:0;
+}
+
+.serviceAlert
+{
+    color:red;
+}
+
+.innerService h2::before
+{
+    margin-before:0;
+    -webkit-margin-before:0;
+
+
+}
+
+.innerService a
+{
+    margin-top: 0;
+    color:#a6a6a6;
+    font-size: 14pt;
+    text-decoration:none;
+    font-family: Palatino, Palatino Lynotype, Garamond, Verdana, Georgia, Times, Arial, Helvetica, serif;
+}
+
+.innerService a:hover
+{
+    color: white;
+    text-decoration:none;
+}
+
+.innerService a.active
+{
+    color: white;
+    text-decoration:none;
 }
 
 .serviceTable td
@@ -342,7 +390,19 @@ html
     margin: 0 auto;
     left:12%;
     margin-top: 5%;
-    overflow-Y: scroll;
+    /*overflow-Y: auto*/;
+}
+
+.gallery_wrapper
+{
+    min-height: 85%;
+    height: 85%;
+    width: 70%;
+    position: absolute;
+    margin:0 auto;
+    left:12%;
+    margin-top:5%;
+    overflow: hidden;
 }
 
 .empty_gallery

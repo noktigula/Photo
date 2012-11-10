@@ -102,18 +102,38 @@
 			{
                 if(img[i].parentNode.tagName == 'LI')
                 {
-                    var w = img[i].width;
-                    var h = img[i].height;
+                    var width = img[i].width;
+                    var height = img[i].height;
                     //alert("image w="+w+" h="+h);
 
+                    if (width >= height)
+                    {
+                        //alert(i + " image width before: " + width);
+                        width = 0.98 * options.width;
+                        //alert(i + " image width after: " + width);
+                        var coeff = width / img[i].width;
+                        height *= coeff;
+                    } // if
+                    else
+                    {
+                        height = 0.98 * options.width;
+
+                        var coeff = height / img[i].height;
+                        width *= coeff;
+                    } // else
+
+                    img[i].width = width;
+                    img[i].height = height;
+
                     var hCenter = (0.5 * options.height);
-                    var imgHCenter = (0.5 * h);
+                    var imgHCenter = (0.5 * height);
                     var $hh = (hCenter - imgHCenter) + 'px';
+                    //alert("hCenter = " + hCenter + " imgCenter = " + imgHCenter + " hh = " + $hh);
                     //alert("hCenter=" + hCenter + "\nimgHCenter=" + imgHCenter + "\nmarginTop="+$hh);
                     img[i].style.marginTop = $hh;
 
                     var wCenter = (0.5 * options.width);
-                    var imgWCenter = (0.5 * w);
+                    var imgWCenter = (0.5 * width);
                     var $ww = (wCenter - imgWCenter) + 'px';
                     //alert("wCenter=" + wCenter + "\nimgWCenter=" + imgWCenter + "\nmarginLeft="+$ww);
                     img[i].style.marginLeft = $ww;

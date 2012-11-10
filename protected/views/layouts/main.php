@@ -97,6 +97,7 @@ if (Yii::app()->controller->id != "portfolio" && Yii::app()->controller->action-
 _END;
                         foreach (glob("images/slideshow/*.jpg") as $filename)
                         {
+
                             $size = getimagesize($filename);
                             $width = $size[0];
                             $height = $size[1];
@@ -105,27 +106,27 @@ _END;
                              TODO: перенести все в js
                              подгонять размер изображения под размер div`а
                             */
-                            if ($width >= $height)
-                            {
-                                $width = 500;
+                           // if ($width >= $height)
+                            //{
+                                /*$width = 500;
 
                                 $coeff = $width / $size[0];
-                                $height *= $coeff;
+                                $height *= $coeff;*/
 
                                 echo "<li>";
                                 echo "<img style='position:relative;' width='$width' height='$height' src='$filename' />";
                                 echo "</li>";
-                            } // if
-                            else
-                            {
-                                $height = 500;
+                            //} // if
+                            //else
+                            //{
+                               /* $height = 500;
                                 $coeff = $height / $size[1];
-                                $width *= $coeff;
+                                $width *= $coeff; */
 
-                                echo "<li>";
-                                echo "<img style='position:relative;' width='$width'  height='$height' src='$filename' />";
-                                echo "</li>";
-                            } // else
+                              //  echo "<li>";
+                              //  echo "<img style='position:relative;'  src='$filename' />";
+                                //echo "</li>";
+                            //} // else
                         } // foreach
     $theme = (isset(Yii::app()->request->cookies['dynamicTheme']->value))
         ? Yii::app()->request->cookies['dynamicTheme']->value
@@ -230,12 +231,12 @@ else
     echo <<< _END
     <div class="main">
         <div class="logo" >
-            <table>
-                <tr>
+           <table height='100%'>
+                <tr height='75%'>
                     <td width='90%'></td>
                     <td width='10%'></td>
                 </tr>
-                <tr>
+                <tr height='25%'>
                     <td  width='90%' align='right'>Сменить тему</td>
                     <td  align='left'  width='10%'>
                         <form method='post'>
@@ -279,13 +280,25 @@ _END;
                         'links'=>$this->breadcrumbs,
                     ));
                 }  // breadcrumbs -->*/
+    $galleryStyle = "'width:75%;'";
+    if(Yii::app()->controller->action->id == "services")
+    {
+         echo "<div class='gallery_wrapper'>";
+        $galleryStyle = "'width:90%;height:100%;overflow-Y:auto;'";
+    } // if
+
     echo <<< _END
-               <div class='gallery_gallery' id='gallery_gallery'>
+               <div class='gallery_gallery' style=$galleryStyle id='gallery_gallery'>
 _END;
                     echo $content;
     echo <<< _END
                 </div> <!-- container_gallery -->
-
+_END;
+    if(Yii::app()->controller->action->id == "services")
+    {
+        echo "</div>";
+    } // if
+    echo <<< _END
                 <div class="clear_gallery">
                 </div><!--clear_gallery-->
 
