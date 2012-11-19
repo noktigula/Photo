@@ -9,10 +9,17 @@
 
 
 echo "<div id='fotorama'>";
-foreach (glob($filepath."/*.jpg") as $filename)
+$initial--;
+$photoArr = glob($filepath."/*.jpg");
+for ($i = 1; $i <= count($photoArr); ++$i)
 {
+    $filename = $filepath."/".$i.".jpg";
     echo "<img src='$filename'/>";
-} // foreach
+}
+//foreach (glob($filepath."/*.jpg") as $filename)
+//{
+//  echo "<img src='$filename'/>";
+//} // foreach
 echo "</div>";
 
 echo "</body>";
@@ -33,7 +40,7 @@ echo <<< _END
         navBackground:$bg,
         background:$bg,
         fullscreenIcon:true,
-        preload:4,
+        preload:'4',
         startImg:$initial
         });
     });

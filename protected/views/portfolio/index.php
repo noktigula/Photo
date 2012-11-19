@@ -124,13 +124,15 @@ function showPhotoTable($filePath)
 
     $borderColor = ($theme == "dark") ? "#ffffff" : "#000000";
 
-    foreach (glob($filePath."/thumbs/*.jpg") as $filename)
+    $photoArr = glob($filePath."/thumbs/*.jpg");
+    for ($i = 1; $i <= count($photoArr); ++$i)
     {
+        $filename = $filePath."/thumbs/".$i.".jpg";
         $size = getimagesize($filename);
         $width = $size[0];
         $height = $size[1];
 
-        $ref =  Yii::app()->getUrlManager()->createUrl('/portfolio/showGallery', array("filepath" => $filePath, "initial" => $count));
+        $ref =  Yii::app()->getUrlManager()->createUrl('/portfolio/showGallery', array("filepath" => $filePath, "initial" => $i));
 
         if ($width >= $height)
         {

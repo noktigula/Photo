@@ -3,12 +3,12 @@
 $this->pageTitle=Yii::app()->name;
 ?>
 
-<br />
 <h2>Вы можете связаться со мной удобным для Вас способом:</h2>
-<ul style="list-style: none;">
+
     <!-- using div cause gallerific find ul > li images -->
-    <li>
-        <div>
+<table>
+    <tr>
+        <td>
             <table height='23px'>
                 <tr>
                     <td valign="center" width="23px">
@@ -19,11 +19,13 @@ $this->pageTitle=Yii::app()->name;
                     </td>
                 </tr>
             </table>
-        </div>
-    </li>
-    <li><div><a href="http://vk.com/trifonov_vova"><img src='images/icons/button.vkontakte.png' /></a></div></li>
-    <li>
-        <div>
+        </td>
+        <td>
+            <a href="http://vk.com/trifonov_vova"><img src='images/icons/button.vkontakte.png' /></a>
+        </td>
+    </tr>
+    <tr>
+        <td>
             <table height='23px'>
                 <tr>
                     <td valign="center" width="23px">
@@ -34,10 +36,8 @@ $this->pageTitle=Yii::app()->name;
                     </td>
                 </tr>
             </table>
-        </div>
-    </li>
-    <li>
-        <div>
+        </td>
+        <td>
             <table height='23px'>
                 <tr>
                     <td valign="center" width="23px">
@@ -48,9 +48,10 @@ $this->pageTitle=Yii::app()->name;
                     </td>
                 </tr>
             </table>
-        </div>
-    </li>
-</ul>
+        </td>
+    </tr>
+</table>
+
 
 <h3>либо заполнив заявку ниже</h3>
 <div class="form">

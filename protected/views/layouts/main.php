@@ -281,7 +281,8 @@ _END;
                     ));
                 }  // breadcrumbs -->*/
     $galleryStyle = "'width:75%;'";
-    if(Yii::app()->controller->action->id == "services")
+    //if(Yii::app()->controller->action->id == "services")
+    if(Yii::app()->controller->action->id != "showGallery")
     {
          echo "<div class='gallery_wrapper'>";
         $galleryStyle = "'width:90%;height:100%;overflow-Y:auto;'";
@@ -294,7 +295,8 @@ _END;
     echo <<< _END
                 </div> <!-- container_gallery -->
 _END;
-    if(Yii::app()->controller->action->id == "services")
+    //if(Yii::app()->controller->action->id == "services")
+    if(Yii::app()->controller->action->id != "showGallery")
     {
         echo "</div>";
     } // if
@@ -312,9 +314,9 @@ _END;
     </div> <!-- main-->
 
      <div id="footer">
-                Copyright &copy; <?php echo date('Y'); ?> Vladimir Trifonov<br/>
-                8-909-990-89-59<br/>
-     </div><!-- footer -->
+        Copyright &copy; $date Vladimir Trifonov<br/>
+        8-909-990-89-59<br/>
+    </div><!-- footer -->
 _END;
 } // else if gallery
 ?>

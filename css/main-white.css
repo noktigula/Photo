@@ -210,6 +210,8 @@ html
     /* bottom: 2%;*/
 }
 
+
+
 #logo
 {
     padding: 10px 20px;
@@ -393,8 +395,8 @@ html
 
 .gallery_wrapper
 {
-    min-height: 85%;
-    height: 85%;
+    min-height: 90%;
+    height: 90%;
     width: 70%;
     position: absolute;
     margin:0 auto;
