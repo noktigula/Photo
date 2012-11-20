@@ -115,7 +115,7 @@ function showPhotoTable($filePath)
 {
     $count = 0;
     //echo $filePath;
-    echo "<table>";
+    echo "<table cellpadding='5px'>";
     echo "<tr>";
 
     $theme = (isset(Yii::app()->request->cookies['dynamicTheme']->value))
@@ -136,11 +136,11 @@ function showPhotoTable($filePath)
 
         if ($width >= $height)
         {
-            $width = 150;
+            $width = 148;
 
             $coeff = $width / $size[0];
             $height *= $coeff;
-            $height = 100;
+            $height = 98;
 
             echo "<td align='center' width='150px' >";
             echo "<a href='$ref' style='margin:0'>";
@@ -150,7 +150,7 @@ function showPhotoTable($filePath)
         } // if
         else
         {
-            $height = 100;
+            $height = 98;
             $coeff = $height / $size[1];
             $width *= $coeff;
             echo "<td align='center' width='150px' >";
