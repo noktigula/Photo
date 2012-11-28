@@ -30,18 +30,17 @@ class Controller extends CController
             $dynamicTheme = $_POST['change'];
             if(isset(Yii::app()->request->cookies['dynamicTheme']->value))
             {
-                Yii::app()->request->cookies['dynamicTheme']->value = $dynamicTheme;
-                /*if(Yii::app()->request->cookies['dynamicTheme']->value != $dynamicTheme)
+                if(Yii::app()->request->cookies['dynamicTheme']->value != $dynamicTheme)
                 {
-                    //echo "white, bitch";
-                    $dynamicTheme = "white";
-                } // if dark*/
+                    Yii::app()->request->cookies['dynamicTheme']->value = $dynamicTheme;
+                } // if
             } // if
 
             $cookie = new CHttpCookie(
                 "dynamicTheme", $dynamicTheme);
             $cookie->expire = time()+60*60*24*180;
             Yii::app()->request->cookies['dynamicTheme'] = $cookie;
+
             unset($_POST['change']);
         } // if isset $_POST['change']
 

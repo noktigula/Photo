@@ -371,8 +371,8 @@ html
 
 .info_block_gallery
 {
-    min-height: 94%;
-    height: 94%;
+    min-height: 95%;
+    height: 95%;
     width: 100%;
     float:right;
     /*border:1px solid blue;*/
@@ -384,11 +384,11 @@ html
 {
     min-height:80%;
     height:80%;
-    width:80%;
+    width:90%;
     /*border:1px solid red;*/
     position: absolute;
     margin: 0 auto;
-    left:10%;
+    left:5%;
     /*margin-top: 5%;*/
     /*overflow-Y: auto*/;
 }
@@ -397,10 +397,10 @@ html
 {
     min-height: 90%;
     height: 90%;
-    width: 75%;
+    width: 85%;
     position: absolute;
     margin:0 auto;
-    left:10%;
+    left:5%;
     margin-top:5%;
     overflow: hidden;
     /*margin-bottom: 10px;*/

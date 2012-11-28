@@ -29,7 +29,7 @@ $theme = (isset(Yii::app()->request->cookies['dynamicTheme']->value))
     : "dark";
 
     $bg = ($theme == "dark") ? "'black'" : "'white'";
-
+    $preload = 4;
 echo <<< _END
     <script>
 
@@ -40,7 +40,7 @@ echo <<< _END
         navBackground:$bg,
         background:$bg,
         fullscreenIcon:true,
-        preload:'4',
+        preload:$preload,
         startImg:$initial
         });
     });

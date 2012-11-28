@@ -280,12 +280,12 @@ _END;
                         'links'=>$this->breadcrumbs,
                     ));
                 }  // breadcrumbs -->*/
-    $galleryStyle = "'width:75%;margin-top:5%;'";
+    $galleryStyle = "'width:90%;margin-top:5%;'";
     //if(Yii::app()->controller->action->id == "services")
     if(Yii::app()->controller->action->id != "showGallery")
     {
          echo "<div class='gallery_wrapper'>";
-        $galleryStyle = "'width:93%;height:100%;overflow-Y:auto;'";
+        $galleryStyle = "'width:100%;height:100%;overflow-Y:auto;left:3%;'";
     } // if
 
     echo <<< _END
