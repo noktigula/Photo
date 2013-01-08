@@ -150,4 +150,9 @@ class SiteController extends Controller
             default:return;
         } // switch action
     } // pub lic function actionSwitchTheme
+
+    public function actionAboutMe()
+    {
+        $this->render('aboutMe');
+    } // actionAboutMe
 }

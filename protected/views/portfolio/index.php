@@ -111,10 +111,37 @@ function printCategories($array)
     } // foreach
 }
 
+function getMaxPhotoNumber($photoArr)
+{
+    $max = 0;
+    foreach($photoArr as $photo)
+    {
+        $parts = explode("/", $photo);
+        $number = array_pop($parts);
+        $pos = strpos($number, ".");
+        //echo "pos = ".$pos;
+        $number = substr($number, 0, $pos);
+        //echo $number." ";
+        $number = intval($number);
+        if ($number > $max)
+        {
+            $max = $number;
+        } // if
+    } // foreach
+
+    return $max;
+} // sortPath
+
 function showPhotoTable($filePath)
 {
     $count = 0;
     //echo $filePath;
+    $photoArr = glob($filePath."/thumbs/*.jpg");
+    //sort($photoArr);
+    $maxValue = getMaxPhotoNumber($photoArr);
+    //echo "max = ".$maxValue;
+    //echo "count = ".array_pop($photoArr);
+
     echo "<table cellpadding='5px' cellspacing='5px'>";
     echo "<tr>";
 
@@ -124,48 +151,98 @@ function showPhotoTable($filePath)
 
     $borderColor = ($theme == "dark") ? "#ffffff" : "#000000";
 
-    $photoArr = glob($filePath."/thumbs/*.jpg");
-    for ($i = 1; $i <= count($photoArr); ++$i)
+
+//    for ($i = 1; $i <= count($photoArr); ++$i)
+    for ($i = 1; $i <= $maxValue; ++$i)
     {
         $filename = $filePath."/thumbs/".$i.".jpg";
-        $size = getimagesize($filename);
-        $width = $size[0];
-        $height = $size[1];
-
-        $ref =  Yii::app()->getUrlManager()->createUrl('/portfolio/showGallery', array("filepath" => $filePath, "initial" => $i));
-
-        if ($width >= $height)
+        if(file_exists($filename))
         {
-            $width = 150;
+            $size = getimagesize($filename);
+            $width = $size[0];
+            $height = $size[1];
 
-            $coeff = $width / $size[0];
-            $height *= $coeff;
-            $height = 100;
+            $ref =  Yii::app()->getUrlManager()->createUrl('/portfolio/showGallery', array("filepath" => $filePath, "initial" => $count));
 
-            echo "<td align='center' width='150px' >";
-            echo "<a href='$ref' style='margin:0'>";
-            echo "<img width='$width' height='$height' src='$filename' style='margin:0;border:1px solid $borderColor'/>";
-            echo "</a>";
-            echo "</td>";
-        } // if
-        else
-        {
-            $height = 100;
-            $coeff = $height / $size[1];
-            $width *= $coeff;
-            echo "<td align='center' width='150px' >";
-            echo "<a href='$ref' style='margin:0'>";
-            echo "<img width='$width'  height='$height' src='$filename' style='margin:0;border:1px solid $borderColor'/>";
-            echo "</a>";
-            echo "</td>";
-        } // else
+            if ($width >= $height)
+            {
+                $width = 150;
 
-        $count++;
-        if ($count % 4 == 0)
-        {
-            echo "</tr><tr>";
+                $coeff = $width / $size[0];
+                $height *= $coeff;
+                $height = 100;
+
+                echo "<td align='center' width='150px' >";
+                echo "<a href='$ref' style='margin:0'>";
+                echo "<img width='$width' height='$height' src='$filename' style='margin:0;border:1px solid $borderColor'/>";
+                echo "</a>";
+                echo "</td>";
+            } // if
+            else
+            {
+                $height = 100;
+                $coeff = $height / $size[1];
+                $width *= $coeff;
+                echo "<td align='center' width='150px' >";
+                echo "<a href='$ref' style='margin:0'>";
+                echo "<img width='$width'  height='$height' src='$filename' style='margin:0;border:1px solid $borderColor'/>";
+                echo "</a>";
+                echo "</td>";
+            } // else
+
+            $count++;
+            if ($count % 4 == 0)
+            {
+                echo "</tr><tr>";
+            } // if
         } // if
     } // foreach
+
+//    foreach($photoArr AS $filename)
+//    {
+//        $filename = $filePath."/thumbs/".$i.".jpg";
+//        if(file_exists($filename))
+//        {
+//            $size = getimagesize($filename);
+//            $width = $size[0];
+//            $height = $size[1];
+//
+//            $ref =  Yii::app()->getUrlManager()->createUrl('/portfolio/showGallery', array("filepath" => $filePath, "initial" => $i));
+//
+//            if ($width >= $height)
+//            {
+//                $width = 150;
+//
+//                $coeff = $width / $size[0];
+//                $height *= $coeff;
+//                $height = 100;
+//
+//                echo "<td align='center' width='150px' >";
+//                echo "<a href='$ref' style='margin:0'>";
+//                echo "<img width='$width' height='$height' src='$filename' style='margin:0;border:1px solid $borderColor'/>";
+//                echo "</a>";
+//                echo "</td>";
+//            } // if
+//            else
+//            {
+//                $height = 100;
+//                $coeff = $height / $size[1];
+//                $width *= $coeff;
+//                echo "<td align='center' width='150px' >";
+//                echo "<a href='$ref' style='margin:0'>";
+//                echo "<img width='$width'  height='$height' src='$filename' style='margin:0;border:1px solid $borderColor'/>";
+//                echo "</a>";
+//                echo "</td>";
+//            } // else
+//
+//            $count++;
+//            if ($count % 4 == 0)
+//            {
+//                echo "</tr><tr>";
+//            } // if
+//        } // if
+//    } // foreach
+
     echo "</tr>";
     echo "</table>";
 } // showPhotoTable

@@ -1,4 +1,26 @@
 <?php
+
+function getMaxPhotoNumber($photoArr)
+{
+    $max = 0;
+    foreach($photoArr as $photo)
+    {
+        $parts = explode("/", $photo);
+        $number = array_pop($parts);
+        $pos = strpos($number, ".");
+        //echo "pos = ".$pos;
+        $number = substr($number, 0, $pos);
+        //echo $number." ";
+        $number = intval($number);
+        if ($number > $max)
+        {
+            $max = $number;
+        } // if
+    } // foreach
+
+    return $max;
+} // sortPath
+
 /**
  * Created by JetBrains PhpStorm.
  * User: Noktigula
@@ -7,14 +29,18 @@
  * To change this template use File | Settings | File Templates.
  */
 
-
+//echo $initial;
 echo "<div id='fotorama'>";
-$initial--;
+//$initial--;
 $photoArr = glob($filepath."/*.jpg");
-for ($i = 1; $i <= count($photoArr); ++$i)
+$max = getMaxPhotoNumber($photoArr);
+for ($i = 1; $i <= $max; ++$i)
 {
     $filename = $filepath."/".$i.".jpg";
-    echo "<img src='$filename'/>";
+    if(file_exists($filename))
+    {
+        echo "<img src='$filename'/>";
+    } // if file exists
 }
 //foreach (glob($filepath."/*.jpg") as $filename)
 //{
